@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    background-color: rgb(22, 32, 41);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    min-width:80vw ;
+
+}
+.heading{
+    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20%;
+    margin-left: 20%;
+    text-align: center;
+}
+.heading h1::after{
+    content: " Question?";
+    color: red;
+}
+.heading p{
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+}
+.acc{
+    margin: 60px auto;
+    width: 80vw;
+    padding-right: 40px;
+}
+.faq{
+    width: 100%;
+    margin: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
+}
+
+.faq label{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.6s;
+}
+label::before{
+    content: '+';
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+.content{
+    line-height: 1.75;
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    left: 20px;
+
+    transition: max-height 0.5s ease-out;
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"] + label:hover:before{
+    color: red;
+    transform: rotate(180deg);
+}
+input[type="checkbox"] + label:hover{
+    font-size: larger;
+}
+
+input[type="checkbox"]:checked + label + .content{
+    max-height: 100vh;
+}
+input[type="checkbox"]:checked + label::before{
+    content: '+';
+    margin-right: 8px;
+    font-size: 35px;
+    color: red;
+    transform: rotate(45deg);
+}
